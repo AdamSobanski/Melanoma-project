@@ -3,9 +3,15 @@
 Binary classification of skin lesions (benign vs. malignant melanoma)
 using transfer learning on EfficientNet-B0.
 
+## Live Demo
+[Try the app](https://melanoma-project-jbzqqnm8ruymmcarkhcyvs.streamlit.app/)
+
+
 ## Stack
 - PyTorch + TorchVision
 - EfficientNet-B0 (pretrained on ImageNet)
+- Streamlit
+- Hugging Face Hub (model hosting)
 - Dataset: Melanoma Skin Cancer Dataset (10k images)
 
 ## Results
@@ -56,6 +62,6 @@ melanoma_segmentation/
 └── src/                     # source code (this is space for next steps: segmentation etc. now is empty)
 
 ## Next Steps
-- Streamlit app for inference
-- Skin lesion segmentation (U-Net)
+- Streamlit app for inference - Done
+- Skin lesion segmentation (U-Net) - next step
 - Integration with full-body imaging pipeline
