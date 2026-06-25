@@ -9,9 +9,14 @@ st.warning('⚠️ This is an educational prototype, not a diagnostic tool. Resu
 # wczytaj model
 @st.cache_resource
 def load_model():
+    from huggingface_hub import hf_hub_download
+    model_path = hf_hub_download(
+        repo_id="Ai-Adam-Six-Sigma/melanoma-classifier",
+        filename="melanoma_model.pth"
+    )
     model = models.efficientnet_b0(weights=None)
     model.classifier[1] = nn.Linear(model.classifier[1].in_features, 2)
-    model.load_state_dict(torch.load('../models/melanoma_model.pth', map_location='cpu'))
+    model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
     return model
 
